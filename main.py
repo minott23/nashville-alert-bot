@@ -71,8 +71,6 @@ def send_message(text):
 # TEST MESSAGE (REMOVE AFTER CONFIRMATION)
 # =========================
 
-send_message("🚨 Test Alert\n\nTitle of Article\nhttps://example.com")
-
 # =========================
 # KEYWORD MATCH FUNCTION
 # =========================
