@@ -71,7 +71,7 @@ def send_message(text):
 # TEST MESSAGE (REMOVE AFTER CONFIRMATION)
 # =========================
 
-send_message("✅ Bot is running and connected to Telegram successfully!")
+send_message("🚨 Test Alert\n\nTitle of Article\nhttps://example.com")
 
 # =========================
 # KEYWORD MATCH FUNCTION
