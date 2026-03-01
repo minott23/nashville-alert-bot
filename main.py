@@ -8,7 +8,7 @@ import os
 # CONFIG
 # =========================
 
-BOT_TOKEN = "8681803290: AAGO-
+BOT_TOKEN = "8681803290:AAGO-
 g0AKIpna4LMOPJc2E68K69ms_laP0Y"
 CHAT_ID = "6861173382"
 send_message("✅ Test alert: Bot is running correctly.")
