@@ -8,8 +8,9 @@ import os
 # CONFIG
 # =========================
 
-BOT_TOKEN = "YOUR_BOT_TOKEN"
-CHAT_ID = "YOUR_CHAT_ID"
+BOT_TOKEN = "8681803290: AAGO-
+g0AKIpna4LMOPJc2E68K69ms_laP0Y"
+CHAT_ID = "6861173382"
 CHECK_INTERVAL = 600  # 10 minutes
 
 EVENT_KEYWORDS = [
