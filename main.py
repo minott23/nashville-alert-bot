@@ -8,9 +8,8 @@ import os
 # CONFIG
 # =========================
 
-BOT_TOKEN = "8681803290:AAGO-g0AKIpna4LMOPJc2E68K69ms_laP0Y"
-CHAT_ID = "6861173382"
-send_message("✅ Test alert: Bot is running correctly.")
+BOT_TOKEN = "8681803290:AAGO-gOAKIpna4lMOPJc2E68K69ms_ldP0Y"
+CHAT_ID = "6861173382"  # Your Telegram numeric ID
 CHECK_INTERVAL = 600  # 10 minutes
 
 EVENT_KEYWORDS = [
@@ -69,6 +68,12 @@ def send_message(text):
     requests.post(url, data=payload)
 
 # =========================
+# TEST MESSAGE (REMOVE AFTER CONFIRMATION)
+# =========================
+
+send_message("✅ Bot is running and connected to Telegram successfully!")
+
+# =========================
 # KEYWORD MATCH FUNCTION
 # =========================
 
@@ -92,10 +97,7 @@ while True:
             if link in sent_links:
                 continue
 
-            content = (
-                entry.get("title", "") +
-                entry.get("summary", "")
-            )
+            content = entry.get("title", "") + entry.get("summary", "")
 
             if matches_keywords(content):
                 message = f"""🚨 Keyword Match
