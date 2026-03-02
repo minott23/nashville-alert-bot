@@ -9,25 +9,8 @@ import os
 # =========================
 
 BOT_TOKEN = "8681803290:AAGO-gOAKIpna4lMOPJc2E68K69ms_ldP0Y"
-CHAT_ID = "6861173382"  # Your Telegram numeric ID
+CHAT_ID = "6861173382"
 CHECK_INTERVAL = 600  # 10 minutes
-
-EVENT_KEYWORDS = [
-    "shooting", "stabbing", "arrest", "police",
-    "fire", "crash", "robbery", "investigation",
-    "breaking", "storm", "tornado", "flood",
-    "governor", "bill", "election"
-]
-
-LOCATION_KEYWORDS = [
-    "east nashville", "downtown nashville", "germantown",
-    "the nations", "antioch", "donelson", "hermitage",
-    "madison", "bellevue", "12 south",
-    "wedgewood houston", "green hills",
-    "north nashville", "south nashville",
-    "sylvan park", "west nashville",
-    "bordeaux", "edgehill"
-]
 
 RSS_FEEDS = [
     "https://www.wsmv.com/rss",
@@ -68,20 +51,6 @@ def send_message(text):
     requests.post(url, data=payload)
 
 # =========================
-# TEST MESSAGE (REMOVE AFTER CONFIRMATION)
-# =========================
-
-# =========================
-# KEYWORD MATCH FUNCTION
-# =========================
-
-def matches_keywords(text):
-    text = text.lower()
-    event_match = any(word in text for word in EVENT_KEYWORDS)
-    location_match = any(word in text for word in LOCATION_KEYWORDS)
-    return event_match and location_match
-
-# =========================
 # MAIN LOOP
 # =========================
 
@@ -95,20 +64,17 @@ while True:
             if link in sent_links:
                 continue
 
-            content = entry.get("title", "") + entry.get("summary", "")
-
-            if matches_keywords(content):
-                message = f"""🚨 Keyword Match
+            message = f"""📰 New Article
 
 {entry.title}
 
 {link}
 """
-                send_message(message)
+            send_message(message)
 
-                sent_links.append(link)
+            sent_links.append(link)
 
-                with open(SENT_FILE, "w") as f:
-                    json.dump(sent_links, f)
+            with open(SENT_FILE, "w") as f:
+                json.dump(sent_links, f)
 
     time.sleep(CHECK_INTERVAL)
