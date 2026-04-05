@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "615Nav",
+    "slug": "615nav",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A1916"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nashville.615nav",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "615Nav uses your location to show nearby posts, alerts, and businesses.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "615Nav uses your location to show nearby posts, alerts, and businesses.",
+        "NSCameraUsageDescription": "615Nav needs camera access to let you capture photos and videos for posts.",
+        "NSPhotoLibraryUsageDescription": "615Nav needs photo library access to let you upload media to posts.",
+        "NSMicrophoneUsageDescription": "615Nav needs microphone access for video recording."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1A1916"
+      },
+      "package": "com.nashville.nav615",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow 615Nav to use your location."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow 615Nav to access your camera."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow 615Nav to access your photos."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
+    }
+  }
+}
